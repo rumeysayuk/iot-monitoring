@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "c1b3e852-0aef-432f-8724-9bfbd3ec7ca3",
+		"name": "iot-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14547229",
+		"_collection_link": "https://orange-astronaut-755806.postman.co/workspace/Budubi~4c423260-3ad2-4c54-8f80-1f40847c6cba/collection/14547229-c1b3e852-0aef-432f-8724-9bfbd3ec7ca3?action=share&source=collection_link&creator=14547229"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"rumeysay\",\n\t\"password\": \"pass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user(default)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"rumeysay\",\r\n  \"password\": \"pass\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register system_admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"adminry\",\n\t\"password\": \"pass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register-admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWlucnkiLCJzdWIiOjgsInJvbGUiOiJzeXN0ZW1fYWRtaW4iLCJpYXQiOjE3NDI1ODIzNzIsImV4cCI6MTc0MjU4NTk3Mn0.eeGG_MCS_u-rOa5J2mtKx75zj889UecV-NSbO-C-i1c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer TOKEN"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "temp sensor 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sensors/temp_sensor_02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sensors",
+						"temp_sensor_02"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "temp sensor 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sensors/temp_sensor_01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sensors",
+						"temp_sensor_01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get logs by system admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWlucnkiLCJzdWIiOjgsInJvbGUiOiJzeXN0ZW1fYWRtaW4iLCJpYXQiOjE3NDI1MDE1MDUsImV4cCI6MTc0MjUwNTEwNX0.7OCFTJMxeERq1kDnA7_97adufUPuTPc_eP2_RSBrkb8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <TOKENİNİ_BURAYA_YAPIŞTIR>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comapny admin create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWlucnkiLCJzdWIiOjgsInJvbGUiOiJzeXN0ZW1fYWRtaW4iLCJpYXQiOjE3NDI1ODMxMjksImV4cCI6MTc0MjU4NjcyOX0.PM3hAJ8fJiPAD6SqTXPvuOlu8SXVW33s0tt20n-uY3Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWlucnkiLCJzdWIiOjgsInJvbGUiOiJzeXN0ZW1fYWRtaW4iLCJpYXQiOjE3NDI1ODMxMjksImV4cCI6MTc0MjU4NjcyOX0.PM3hAJ8fJiPAD6SqTXPvuOlu8SXVW33s0tt20n-uY3Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"companyadminry\",\n\t\"password\": \"pass\",\n\t\"role\": \"company_admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWlucnkiLCJzdWIiOjgsInJvbGUiOiJzeXN0ZW1fYWRtaW4iLCJpYXQiOjE3NDI1ODM3NDAsImV4cCI6MTc0MjU4NzM0MH0.Cb-EYrVuMghoZipnvq5TWsqDUe__1pzOJFWp_J1NkBY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"companyadmin1\",\n    \"password\": \"securepass123\",\n    \"role\": \"company_admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWlucnkiLCJzdWIiOjgsInJvbGUiOiJzeXN0ZW1fYWRtaW4iLCJpYXQiOjE3NDI1MDE1MDUsImV4cCI6MTc0MjUwNTEwNX0.7OCFTJMxeERq1kDnA7_97adufUPuTPc_eP2_RSBrkb8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer TOKEN"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
