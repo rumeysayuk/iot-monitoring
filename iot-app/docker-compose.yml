@@ -1,0 +1,17 @@
+version: '3'
+services:
+  nest-app:
+    build: .
+    container_name: nest-app
+    restart: always
+    image: ry-nest-app:v-1.0.0
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - posgres_default
+networks:
+  posgres_default:
+    driver: bridge
+    external: true
